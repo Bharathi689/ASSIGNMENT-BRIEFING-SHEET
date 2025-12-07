@@ -3,69 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Network Demo - Student 100</title>
+    <title>Cloud Network Emulation - Task 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 50px;
+            margin: 0;
         }
         .container {
+            max-width: 800px;
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
         }
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         .info {
             background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
+            padding: 20px;
             border-radius: 5px;
-            margin: 10px 0;
+            margin: 20px 0;
+        }
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🌐 Cloud Services Emulation</h1>
+        <h1>🌐 Cloud Network Emulation</h1>
+        <h2>7COM1076 - Task 2</h2>
+        
         <div class="info">
-            <h2>Assignment Details</h2>
-            <p><strong>Student ID:</strong> 100</p>
-            <p><strong>Course:</strong> 7COM1076 Network Engineering</p>
-            <p><strong>University:</strong> University of Hertfordshire</p>
+            <h3>Project Information</h3>
+            <p><span class="highlight">Course:</span> Network Systems and Services</p>
+            <p><span class="highlight">Task:</span> Cloud Service Emulation using Mininet & Render.com</p>
+            <p><span class="highlight">Topology:</span> 3 Switches, 2 Hosts</p>
         </div>
+
         <div class="info">
-            <h2>Task 2: Cloud Configuration</h2>
-            <p>This website is hosted on Render.com and accessed through a Mininet emulated network.</p>
-            <p><strong>Network Topology:</strong></p>
-            <ul>
-                <li>3 Switches (S1, S2, S3)</li>
-                <li>2 Hosts (H1, H2)</li>
-                <li>NAT Gateway for Internet Access</li>
-            </ul>
+            <h3>Network Configuration</h3>
+            <p><span class="highlight">Host 1 (H1):</span> Accessing this webpage via xterm</p>
+            <p><span class="highlight">Host 2 (H2):</span> Secondary host in network</p>
+            <p><span class="highlight">Switches:</span> S1, S2, S3 in linear topology</p>
         </div>
+
         <div class="info">
-            <h2>✅ Successfully Connected!</h2>
-            <p>You are viewing this page from Host H1 in the Mininet network.</p>
+            <h3>✅ Status</h3>
+            <p style="font-size: 1.2em;">This webpage is successfully deployed on Render.com and accessible from Mininet network!</p>
         </div>
     </div>
 </body>
-</html># Navigate to project
-cd ~/7COM1076_Network_Project
+</html>
+```
 
-# Make scripts executable
-chmod +x scripts/*.py
+### Step 1.3: Update GitHub
 
-# Edit configuration with YOUR details
-nano config/student_config.py
+**Option A: Edit directly on GitHub**
+1. Go to your repo: `Bharathi689/ASSIGNMENT-BRIEFING-SHEET`
+2. Click on `index.html`
+3. Click the pencil icon (Edit)
+4. Replace all content with the HTML above
+5. Scroll down, add commit message: "Update index.html with proper content"
+6. Click "Commit changes"
 
-# Test installation
-sudo mn --test pingall
+**Option B: Upload from your computer**
+1. Copy the HTML above into a text editor
+2. Save as `index.html`
+3. Go to your GitHub repo
+4. Delete the old `index.html`
+5. Click "Add file" → "Upload files"
+6. Upload your new `index.html`
 
-# You're ready to run tasks!
+### Step 1.4: Wait for Render to Redeploy
+
+After updating GitHub:
+1. Render.com will automatically detect the change
+2. It will redeploy (takes 1-2 minutes)
+3. Check the deployment logs on Render
+4. Once it says "Your site is live", test the URL
+
+---
+
+## 💻 PART 2: Create Your Mininet Python Script
+
+### Step 2.1: Understand the Network Topology
+```
+Internet
+    |
+  [NAT]
+    |
+   S1 --- S2 --- S3
+   |             |
+  H1            H2
