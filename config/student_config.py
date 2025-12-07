@@ -6,7 +6,7 @@ IMPORTANT: UPDATE ALL VALUES WITH YOUR ACTUAL DETAILS!
 # ============================================
 # TASK 1 CONFIGURATION
 # ============================================
-STUDENT_ID = "YOUR_STUDENT_ID_HERE"  # ⚠️ CHANGE THIS TO YOUR ACTUAL STUDENT ID!
+STUDENT_ID = "100"  # ⚠️ CHANGE THIS TO YOUR ACTUAL STUDENT ID!
 SSID = STUDENT_ID
 PASSWORD = STUDENT_ID
 
@@ -52,8 +52,8 @@ STATION_CONFIGS = {
 # ============================================
 # TASK 2 CONFIGURATION
 # ============================================
-RENDER_URL = "https://your-site.onrender.com"  # ⚠️ UPDATE after deploying to Render.com
-GITHUB_REPO = "https://github.com/yourusername/your-repo"  # ⚠️ UPDATE with your repo URL
+RENDER_URL = "https://your-actual-site.onrender.com"  # ⚠️ UPDATE after deploying to Render.com
+GITHUB_REPO = "https://github.com/Bharathi689/ASSIGNMENT-BRIEFING-SHEET"  # ⚠️ UPDATE with your repo URL
 
 # ============================================
 # TASK 3 CONFIGURATION
