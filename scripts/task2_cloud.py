@@ -19,13 +19,21 @@ except ImportError:
     print("Please ensure config/student_config.py exists")
     sys.exit(1)
 
+
+
+    
 from mininet.net import Mininet
-from mininet.node import Controller, OVSSwitch
+from mininet.node import Controller, OVSController
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.link import TCLink
 
 def topology():
+    # Change this line to use built-in controller
+    net = Mininet(controller=Controller)
+    
+    # Or use this:
+    # net = Mininet(controller=OVSController)
     """Create network topology for cloud service access"""
     
     # Validate configuration
